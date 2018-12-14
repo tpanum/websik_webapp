@@ -2,9 +2,6 @@ sudo: false
 
 language: go
 
-env:
-  - GO111MODULE=on
-
 go:
   - 1.11.x
 
@@ -17,7 +14,7 @@ notifications:
   email: false
 
 before_script:
-  - go install -mod vendor github.com/golangci/golangci-lint/cmd/golangci-lint
+  - go get github.com/golangci/golangci-lint/cmd/golangci-lint
 
 script:
   - golangci-lint run       # run a bunch of code checkers/linters in parallel
